@@ -15,7 +15,7 @@ type Storage struct {
 	}
 }
 
-func NewPostgresStorage(db *sql.DB) Storage {
+func NewStorage(db *sql.DB) Storage {
 	return Storage{
 		Post:  &PostsStore{db},
 		Users: &UsersStore{db},
