@@ -13,7 +13,6 @@ import (
 type application struct {
 	config config
 	store  store.Storage
-	db     dbConfig
 }
 
 type dbConfig struct {
@@ -25,6 +24,7 @@ type dbConfig struct {
 
 type config struct {
 	addr string
+	db   dbConfig
 }
 
 func (app *application) mount() http.Handler {
