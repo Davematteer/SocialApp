@@ -13,6 +13,14 @@ import (
 type application struct {
 	config config
 	store  store.Storage
+	db     dbConfig
+}
+
+type dbConfig struct {
+	addr         string
+	maxOpenConns int
+	maxIdleConns int
+	maxIdleTime  string
 }
 
 type config struct {
