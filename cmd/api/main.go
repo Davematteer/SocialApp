@@ -29,7 +29,10 @@ func main() {
 		log.Panic(err)
 	}
 
+	defer db.Close()
+
 	store := store.NewStorage(db)
+	log.Println("database connection pool established")
 
 	app := &application{
 		config: cfg,
